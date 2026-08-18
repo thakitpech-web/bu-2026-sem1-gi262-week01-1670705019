@@ -9,7 +9,7 @@ public class Workshop : MonoBehaviour
         // As01_SyntaxIf();
         // As02_StringComparisonExample();
         // As03_NumberComparisonExample();
-        // As04_AndOrOperatorExample();
+         As04_AndOrOperatorExample();
         // As05_GuessingNumberExample();
         // As06_GuessingNumberMoreOrLessExample();
         // As07_VerifyIdentityExample();
@@ -18,25 +18,71 @@ public class Workshop : MonoBehaviour
     public bool isSixOClock;
     public void As01_SyntaxIf()
     {
-        
+        if (isSixOClock)
+        {
+            Debug.Log("The door is open...");
+            Debug.Log("I think i should go inside");
+        }
+        //else if (isSixOClock == false)
+        //{
+        //    Debug.Log("Not yet...");
+        //}
+        Debug.Log("KNOCK! KNOCK KNOCK!");
     }
 
     public string password;
     public void As02_StringComparisonExample()
     {
-        
+        if (password == "Moon")
+        {
+            Debug.Log("Correct!");
+        }
+        else 
+        {
+            Debug.Log("Wrong password, pls try again...");
+        }
     }
 
     public int as03Number;
     public void As03_NumberComparisonExample()
     {
-
+        if (as03Number > 10)
+        {
+            Debug.Log("My number > 10");
+        }
+        if (as03Number < 10)
+        {
+            Debug.Log("My number < 10");
+        }
+        if (as03Number >= 10)
+        {
+            Debug.Log("My number >= 10");
+        }
+        if (as03Number <= 10)
+        {
+            Debug.Log("My number <= 10");
+        }
+        if (as03Number != 10)
+        {
+            Debug.Log("My number != 10");
+        }
+        if (as03Number == 10)
+        {
+            Debug.Log("My number == 10");
+        }
     }
 
     public int as04Number;
     public void As04_AndOrOperatorExample()
     {
-
+        if (as04Number > 8 && as04Number < 12)
+        {
+            Debug.Log("My number 8 > < 12 ");
+        }
+        if (as04Number > 8 || as04Number < 12)
+        {
+            Debug.Log("My number 8 || 12");
+        }
     }
 
     public int as05GuessingNumber;
