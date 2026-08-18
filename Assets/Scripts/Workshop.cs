@@ -9,10 +9,10 @@ public class Workshop : MonoBehaviour
         // As01_SyntaxIf();
         // As02_StringComparisonExample();
         // As03_NumberComparisonExample();
-         As04_AndOrOperatorExample();
+        // As04_AndOrOperatorExample();
         // As05_GuessingNumberExample();
         // As06_GuessingNumberMoreOrLessExample();
-        // As07_VerifyIdentityExample();
+         As07_VerifyIdentityExample();
     }
 
     public bool isSixOClock;
@@ -89,14 +89,32 @@ public class Workshop : MonoBehaviour
     public int as05RandomNumber;
     public void As05_GuessingNumberExample()
     {
-
+        if (as05GuessingNumber == as05RandomNumber)
+        {
+            Debug.Log("Congratulation");
+        }
+        else
+        {
+            Debug.Log("Try again");
+        }
     }
 
     public int as06GuessingNumber;
     public int as06RandomNumber;
     public void As06_GuessingNumberMoreOrLessExample()
     {
-
+        if(as06GuessingNumber < as06RandomNumber)
+        {
+            Debug.Log("Too low");
+        }
+        else if(as06GuessingNumber > as06RandomNumber)
+        {
+            Debug.Log("Too hight");
+        }
+        else
+        {
+            Debug.Log("Congratulation!");
+        }
     }
 
     public string as07Username;
@@ -105,6 +123,23 @@ public class Workshop : MonoBehaviour
     public bool as07IsPaid;
     public void As07_VerifyIdentityExample()
     {
-
+        if(as07Username == "Okasakii" && as07Password == "123")
+        {
+            Debug.Log("You have accessed");
+            if (as07IsPaid)
+            {
+                Debug.Log("VIP Member");
+            }
+            else
+            { Debug.Log("Free member"); }
+            if(as07Age > 18)
+            {
+                Debug.Log("You have access to exclusive content");
+            }
+        }
+        else
+        {
+            Debug.Log("You are guest");
+        }
     }
 }
