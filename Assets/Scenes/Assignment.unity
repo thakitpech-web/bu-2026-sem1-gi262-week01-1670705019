@@ -478,8 +478,8 @@ MonoBehaviour:
   as09ComputerChoice: 2
   as10WeaponType: sword
   as10BaseDamage: 100
-  as11Score: 0
-  as11CompletionTime: 0
+  as11Score: 8000
+  as11CompletionTime: 30
 --- !u!4 &1270451329
 Transform:
   m_ObjectHideFlags: 0
