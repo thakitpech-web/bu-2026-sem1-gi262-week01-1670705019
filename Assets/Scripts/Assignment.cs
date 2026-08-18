@@ -21,17 +21,32 @@ public class Assignment : MonoBehaviour
     public int as01Number;
     public void As01_CheckNumberSign()
     {
-        // TODO: Implement logic to determine sign
-        // Example: Debug.Log("Positive");
-        throw new System.NotImplementedException();
+        if (as01Number > 0)
+        {
+            Debug.Log("Postitive");
+        }
+        else if (as01Number < 0)
+        {
+            Debug.Log("Negative");
+        }
+        else { Debug.Log("Zero");  }
     }
 
     public int as02Day;
     public void As02_GetDayName()
     {
-        // TODO: Implement logic to return day name
-        // Example: Debug.Log("Monday");
-        throw new System.NotImplementedException();
+        switch (as02Day)
+        {
+            case 1: Debug.Log("Monday"); break;
+            case 2: Debug.Log("Tuseday"); break;
+            case 3: Debug.Log("Wednesday"); break;
+            case 4: Debug.Log("Thursday"); break;
+            case 5: Debug.Log("Friday"); break;
+            case 6: Debug.Log("Saturday"); break;
+            case 7: Debug.Log("Sunday"); break;
+            default: Debug.Log("Invalid day"); break;
+            
+        }
     }
 
     public string as03InputPassword;
@@ -82,14 +97,45 @@ public class Assignment : MonoBehaviour
     public int as08Payment;
     public void As08_PurchasingSystemExample()
     {
-        throw new System.NotImplementedException();
+        if (as08Quantity <= 0)
+        {
+            Debug.Log("สินค้าหมด");
+        }
+        if (as08Quantity > 0)
+        {
+            if (as08Payment >= as08Price)
+            {
+                Debug.Log("คุณได้รับสินค้า");
+                if (as08Payment > as08Price)
+                {
+                    Debug.Log($"คุณได้รับเงินถอน: {as08Payment - as08Price} บาท");
+                }
+            }
+            else { Debug.Log("คุณมีเงินไม่เพียงพอ"); }
+
+        }
     }
 
     public int as09UserChoice;
     public int as09ComputerChoice;
     public void As09_RockPaperScissorsExample()
     {
-        throw new System.NotImplementedException();
+        if (as09UserChoice < 0 || as09UserChoice > 2)
+        {
+            Debug.Log("กรุณาพิมพ์เลือกใหม่ โดยใช้ 0-2");
+        }
+        else
+        {
+            if (as09UserChoice == as09ComputerChoice)
+            {
+                Debug.Log("เสมอ");
+            }
+            else if ((as09UserChoice == 0 && as09ComputerChoice == 2 || as09UserChoice == 1 && as09ComputerChoice == 0 || as09UserChoice == 2 && as09ComputerChoice == 1))
+            {
+                Debug.Log("คุณชนะ");
+            }
+            else { Debug.Log("คุณแพ้"); }
+        }
     }
 
     public string as10WeaponType;

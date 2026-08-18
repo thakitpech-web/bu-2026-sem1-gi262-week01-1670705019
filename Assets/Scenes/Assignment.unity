@@ -471,11 +471,11 @@ MonoBehaviour:
   as06Op: 0
   as06Num2: 0
   as07Month: 0
-  as08Quantity: 0
-  as08Price: 0
-  as08Payment: 0
+  as08Quantity: 1
+  as08Price: 5
+  as08Payment: 6
   as09UserChoice: 0
-  as09ComputerChoice: 0
+  as09ComputerChoice: 2
   as10WeaponType: 
   as10BaseDamage: 0
   as11Score: 0
