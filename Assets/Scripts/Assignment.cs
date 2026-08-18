@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Assignment : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // As01_CheckNumberSign();
@@ -44,8 +44,7 @@ public class Assignment : MonoBehaviour
             case 5: Debug.Log("Friday"); break;
             case 6: Debug.Log("Saturday"); break;
             case 7: Debug.Log("Sunday"); break;
-            default: Debug.Log("Invalid day"); break;
-            
+            default: Debug.Log("Invalid day"); break;  
         }
     }
 
@@ -53,25 +52,51 @@ public class Assignment : MonoBehaviour
     public string as03CorrectPassword;
     public void As03_ValidatePassword()
     {
-        // TODO: Implement password validation logic
-        // Example: Debug.Log("True");
-        throw new System.NotImplementedException();
+        if (as03InputPassword == as03CorrectPassword)
+        {
+            Debug.Log("Ture");
+        }
+        else { Debug.Log("False"); }
     }
 
     public int as04Score;
     public void As04_GetGrade()
     {
-        // TODO: Implement logic to return grade
-        // Example: Debug.Log("A");
-        throw new System.NotImplementedException();
+        if (as04Score >= 80)
+        {
+            Debug.Log("A");
+        }
+        else if (as04Score >= 70)
+        {
+            Debug.Log("B");
+        }
+        else if (as04Score >= 60)
+        {
+            Debug.Log("C");
+        }
+        else if (as04Score >= 50)
+        {
+            Debug.Log("D");
+        }
+        else { Debug.Log("F"); }
     }
 
     public int as05Year;
     public void As05_IsLeapYear()
     {
-        // TODO: Implement leap year check logic
-        // Example: Debug.Log("True");
-        throw new System.NotImplementedException();
+        if(as05Year % 400 == 0)
+        {
+            Debug.Log("True");
+        }
+        else if (as05Year % 100 == 0)
+        {
+            Debug.Log("False");
+        }
+        else if (as05Year % 4 == 0)
+        {
+            Debug.Log("True");
+        }
+        else { Debug.Log("False"); }
     }
 
     public double as06Num1;
@@ -79,17 +104,53 @@ public class Assignment : MonoBehaviour
     public double as06Num2;
     public void As06_Calculate()
     {
-        // TODO: Implement calculator logic
-        // Example: Debug.Log("Result: 42");
-        throw new System.NotImplementedException();
+        double result = 0;
+
+        switch(as06Op)
+        {
+            case '+' : result = as06Num1 + as06Num2; Debug.Log($"Result = {result}"); break;
+            case '-' : result = as06Num1 - as06Num2; Debug.Log($"Result = {result}"); break;
+            case '*' : result = as06Num1 * as06Num2; Debug.Log($"Result = {result}"); break;
+            case '/' : 
+                if (as06Op == 0)
+                {
+                    Debug.Log("Error: Cannot divide by Zero.");
+                }
+                else
+                {
+                    result = as06Num1 / as06Num2;
+                }
+                break;
+            default:
+                Debug.Log("Invalid operator. Pls use +, -, *, /.");
+            return;
+        }
     }
 
     public int as07Month;
     public void As07_GetSeason()
     {
-        // TODO: Implement logic to return season
-        // Example: Debug.Log("Summer");
-        throw new System.NotImplementedException();
+        if (as07Month >= 1 && as07Month <= 12)
+        {
+            if (as07Month == 12 || as07Month == 2 || as07Month == 1)
+            {
+                Debug.Log("It's Winter");
+            }
+            else if (as07Month >= 3 && as07Month <= 5)
+            {
+                Debug.Log("It's Spring");
+            }
+            else if (as07Month >= 6 && as07Month <= 8)
+            {
+                Debug.Log("It's Summer");
+            }
+            else if (as07Month >= 9 && as07Month <= 11)
+            {
+                Debug.Log("It's Fall");
+            }
+        }
+        else { Debug.Log("Invalid month number. Pls try 1-12"); }
+
     }
 
     public int as08Quantity;
@@ -142,17 +203,60 @@ public class Assignment : MonoBehaviour
     public int as10BaseDamage;
     public void As10_CalculateWeaponDamage()
     {
-        // TODO: Add your implementation here
-        // Example: Debug.Log("result as string");
-        throw new System.NotImplementedException();
+        double multiplier = 1.0;
+        switch (as10WeaponType?.ToLower())
+        {
+            case "sword": multiplier = 1.3; break;
+            case "axe": multiplier = 1.4; break;
+            case "bow": multiplier = 1.2; break;
+            case "staff": multiplier = 1.5; break;
+            case "dagger": multiplier = 1.1; break;
+            default: multiplier = 1.0; break;
+        }
+        int totalDamage = (int)(as10BaseDamage * multiplier);
+        Debug.Log($"{totalDamage}");
+
     }
 
     public int as11Score;
     public int as11CompletionTime;
     public void As11_DeterminePlayerRank()
     {
-        // TODO: Add your implementation here
-        // Example: Debug.Log("result as string");
-        throw new System.NotImplementedException();
+        if( as11Score < 0 || as11CompletionTime < 0 )
+        {
+            Debug.Log("Invalid score or time");
+            return;
+        }
+
+        string rank = ""; int baseCoin = 0;
+        if(as11Score >= 8000)
+        {
+            rank = "Gold"; baseCoin = 100;
+        }
+        else if(as11Score >= 6000)
+        {
+            rank = "Silver"; baseCoin = 75;
+        }
+        else if (as11Score >= 4000)
+        {
+            rank = "Bronze"; baseCoin = 50;
+        }
+        else if (as11Score >= 0)
+        {
+            rank = "Participation"; baseCoin = 25;
+        }
+
+        int timeBonus = 0;
+        if(as11CompletionTime <= 30)
+        {
+            timeBonus = 25;
+        }
+        else if (as11CompletionTime <= 60)
+        {
+            timeBonus = 10;
+        }
+
+        int totalCoin = timeBonus + baseCoin;
+        Debug.Log($"{rank} Rank - {totalCoin} coins earned");
     }
 }
